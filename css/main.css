@@ -12,21 +12,24 @@ Primary use:
 [ FONT ]*/
 
 @font-face {
-  font-family: Montserrat-Regular;
-  src: url('../fonts/Montserrat/Montserrat-Regular.ttf'); 
+  font-family: PlayfairDisplay-Regular;
+  src: url('../fonts/PlayfairDisplay/PlayfairDisplay-Regular.ttf'); 
 }
 
 @font-face {
-  font-family: Montserrat-SemiBold;
-  src: url('../fonts/Montserrat/Montserrat-SemiBold.ttf'); 
+  font-family: PlayfairDisplay-BlackItalic;
+  src: url('../fonts/PlayfairDisplay/PlayfairDisplay-BlackItalic.ttf'); 
 }
 
 @font-face {
-  font-family: Playlist Script;
-  src: url('../fonts/Playlist/Playlist Script.otf'); 
+  font-family: Poppins-Regular;
+  src: url('../fonts/Poppins/Poppins-Regular.ttf'); 
 }
 
-
+@font-face {
+  font-family: Poppins-Medium;
+  src: url('../fonts/Poppins/Poppins-Medium.ttf'); 
+}
 
 /*//////////////////////////////////////////////////////////////////
 [ RS PLUGIN ]*/
@@ -43,11 +46,17 @@ Primary use:
 [ Input ]*/
 
 .wrap-input100 {
-  width: 280px;
-  max-width: 100%;
+  width: 650px;
+  max-width: calc(100% + 110px);
   position: relative;
   background-color: transparent;
-  height: 50px;
+  height: 80px;
+}
+
+@media (max-width: 992px) {
+  .wrap-input100 {
+    max-width: 100%;
+  }
 }
 
 /*---------------------------------------------*/
@@ -55,13 +64,29 @@ Primary use:
   display: block;
   width: 100%;
   height: 100%;
-  padding: 0 40px 0 3px;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
-  background-color: rgba(255,255,255, 0.0);
+  padding: 0 80px 0 172px;
+  background-color: #ffe151;
+
+  box-shadow: 0 10px 15px 0px rgba(0,0,0,0.1);
+  -moz-box-shadow: 0 10px 15px 0px rgba(0,0,0,0.1);
+  -webkit-box-shadow: 0 10px 15px 0px rgba(0,0,0,0.1);
+  -o-box-shadow: 0 10px 15px 0px rgba(0,0,0,0.1);
+  -ms-box-shadow: 0 10px 15px 0px rgba(0,0,0,0.1);
 }
 
 .input100:focus {
-  background-color: rgba(255,255,255, 0.05);
+  box-shadow: 0 10px 15px 0px rgba(0,0,0,0.2);
+  -moz-box-shadow: 0 10px 15px 0px rgba(0,0,0,0.2);
+  -webkit-box-shadow: 0 10px 15px 0px rgba(0,0,0,0.2);
+  -o-box-shadow: 0 10px 15px 0px rgba(0,0,0,0.2);
+  -ms-box-shadow: 0 10px 15px 0px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 576px) {
+  .input100 {
+    padding-left: 25px;
+    padding-right: 60px;
+  }
 }
 
 
@@ -86,10 +111,10 @@ Primary use:
   -ms-transform: translateY(-50%);
   -o-transform: translateY(-50%);
   transform: translateY(-50%);
-  right: 32px;
+  right: 72px;
   pointer-events: none;
 
-  font-family: Montserrat-Regular;
+  font-family: Poppins-Medium;
   color: #c80000;
   font-size: 14px;
   line-height: 1.4;
@@ -117,7 +142,7 @@ Primary use:
   -ms-transform: translateY(-50%);
   -o-transform: translateY(-50%);
   transform: translateY(-50%);
-  right: 38px;
+  right: 78px;
 }
 
 .alert-validate:hover:before {
@@ -135,15 +160,19 @@ Primary use:
 
 /*//////////////////////////////////////////////////////////////////
 [ Simple slide100 ]*/
+.simpleslide100-parent {
+  position: relative;
+  z-index: 1;
+}
+
 .simpleslide100 {
   display: block;
-  position: fixed;
-  z-index: 0;
+  position: absolute;
+  z-index: -1;
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
-  background-color: #000;
 }
 
 .simpleslide100-item {
@@ -164,17 +193,39 @@ Primary use:
 /*==================================================================
 [ Color ]*/
 .cl0 {color: #fff;}
-.cl1 {color: #999;}
+.cl1 {color: #333;}
 
 
 
 
 /*//////////////////////////////////////////////////////////////////
 [ S-Text 0 - 15 ]*/
-.s1-txt1 {
-  font-family: Montserrat-SemiBold;
-  font-size: 14px;
-  color: #fff;
+
+/*---------------------------------------------*/
+.s2-txt1 {
+  font-family: Poppins-Medium;
+  font-size: 15px;
+  color: #333;
+  line-height: 1.2;
+}
+
+
+
+/*//////////////////////////////////////////////////////////////////
+[ M-Text 16 - 25 ]*/
+
+/*---------------------------------------------*/
+.m2-txt1 {
+  font-family: Poppins-Regular;
+  font-size: 24px;
+  color: #999;
+  line-height: 1.2;
+}
+
+.m2-txt2 {
+  font-family: Poppins-Regular;
+  font-size: 16px;
+  color: #999;
   line-height: 1.2;
   text-transform: uppercase;
 }
@@ -182,30 +233,13 @@ Primary use:
 
 
 /*//////////////////////////////////////////////////////////////////
-[ M-Text 16 - 25 ]*/
-.m1-txt1 {
-  font-family: Montserrat-Regular;
-  font-size: 18px;
-  color: #fff;
-  line-height: 1;
-}
-
-
-
-/*//////////////////////////////////////////////////////////////////
 [ L-Text >= 26 ]*/
 .l1-txt1 {
-  font-family: Montserrat-Regular;
-  font-size: 30px;
-  color: #fff;
-  line-height: 1;
-}
-
-.l1-txt2 {
-  font-family: Playlist Script;
-  font-size: 180px;
-  color: #fff;
+  font-family: PlayfairDisplay-Regular;
+  font-size: 60px;
+  color: #333;
   line-height: 1.1;
+  text-transform: uppercase;
 }
 
 
@@ -220,8 +254,8 @@ Primary use:
 }
 
 .size2 {
-  min-width: 140px;
-  height: 50px;
+  width: 80px;
+  height: 80px;
 }
 
 .size3 {
@@ -230,15 +264,22 @@ Primary use:
 }
 
 .size4 {
-  width: 35px;
-  height: 100%;
+  width: 172px;
+  height: 80px;
 }
-
 
 /*//////////////////////////////////////////////////////////////////
 [ Width ]*/
 .wsize1 {
-  min-width: 46px;
+  width: 37%;
+}
+
+.wsize2 {
+  width: 63%;
+}
+
+.wsize3 {
+  max-width: 100%;
 }
 
 /*//////////////////////////////////////////////////////////////////
@@ -262,7 +303,9 @@ Primary use:
 
 /*//////////////////////////////////////////////////////////////////
 [ Border ]*/
-
+.bor1 {
+  border-left: 5px solid #333;
+}
 
 
 
@@ -270,19 +313,17 @@ Primary use:
 /*==================================================================
    WHERE WHERE WHERE WHERE WHERE WHERE WHERE WHERE WHERE WHERE WHERE  
 ==================================================================*/
-.where1 {
-  align-self: flex-start;
-}
+
 
 
 
 /*==================================================================
  HOW HOW HOW HOW HOW HOW HOW HOW HOW HOW HOW HOW HOW HOW HOW HOW HOW 
 ==================================================================*/
-.placeholder0::-webkit-input-placeholder { color: #999999;}
-.placeholder0:-moz-placeholder { color: #999999;}
-.placeholder0::-moz-placeholder { color: #999999;}
-.placeholder0:-ms-input-placeholder { color: #999999;}
+.placeholder0::-webkit-input-placeholder { color: #666;}
+.placeholder0:-moz-placeholder { color: #666;}
+.placeholder0::-moz-placeholder { color: #666;}
+.placeholder0:-ms-input-placeholder { color: #666;}
 
 
 /*---------------------------------------------*/
@@ -305,7 +346,6 @@ Primary use:
 /*---------------------------------------------*/
 .wrappic1 {
   display: block;
-  flex-grow: 1;
 }
 
 .wrappic1 img {
@@ -315,67 +355,27 @@ Primary use:
 /*---------------------------------------------*/
 .how-btn1 {
   padding: 0 15px;
-  background-color: transparent;
-  border: 1px solid #fff;
+  background-color: #fff;
   border-radius: 25px;
 }
 
 .how-btn1:hover {
-  background-color: #fff;
-  color: #555;
+  background-color: #555555;
+  color: #fff;
 }
 
 /*---------------------------------------------*/
 .how-social {
-  color: #999;
-  font-size: 18px;
-  border: 1px solid rgba(255,255,255,0.1);
+  color: #666;
+  font-size: 16px;
   background-color: transparent;
   border-radius: 50%;
+  border: 1px solid #e6e6e6;
 }
 
 .how-social:hover {
-  background-color: #fff;
-  color: #555;
-}
-
-/*---------------------------------------------*/
-.how-btn-play1 {
-  width: 60px;
-  height: 60px;
-  background-color: transparent;
-  border-radius: 50%;
-  font-size: 20px;
-  color: #333;
-  position: relative;
-  z-index: 1;
-}
-
-.how-btn-play1::after {
-  content: "";
-  display: block;
-  position: absolute;
-  z-index: -1;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background-color: #fff;
-  border-radius: 50%;
-
-  -webkit-transition: all 0.4s;
-  -o-transition: all 0.4s;
-  -moz-transition: all 0.4s;
-  transition: all 0.4s;
-}
-
-.how-btn-play1:hover:after {
-  opacity: 0.6;
-  -webkit-transform: scale(1.2);
-  -moz-transform: scale(1.2);
-  -ms-transform: scale(1.2);
-  -o-transform: scale(1.2);
-  transform: scale(1.2);
+  background-color: #333;
+  color: #fff;
 }
 
 
@@ -397,7 +397,11 @@ Primary use:
 
 /*---------------------------------------------*/
 .hov1:hover i {
-  color: #fff;
+  -webkit-transform: translateX(10px);
+  -moz-transform: translateX(10px);
+  -ms-transform: translateX(10px);
+  -o-transform: translateX(10px);
+  transform: translateX(10px);
 }
 
 
@@ -432,6 +436,14 @@ Primary use:
   .w-full-xl {width: 100%;}
 
   /*---------------------------------------------*/
+  .respon1 {
+    width: 60%;
+  }
+
+  /*---------------------------------------------*/
+  .respon2 {
+    width: 40%;
+  }
 
 }
 
@@ -459,8 +471,16 @@ Primary use:
   .w-full-lg {width: 100%;}
 
   /*---------------------------------------------*/
-   .respon1 {
-    font-size: 160px;
+  .respon1 {
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  /*---------------------------------------------*/
+  .respon2 {
+    width: 100%;
+    height: 500px;
   }
 
 
@@ -487,11 +507,7 @@ Primary use:
   .p-r-15-md {padding-right: 15px;}
 
   .w-full-md {width: 100%;}
-
   /*---------------------------------------------*/
-  .respon1 {
-    font-size: 120px;
-  }
 
 }
 
@@ -519,8 +535,22 @@ Primary use:
   .w-full-sm {width: 100%;}
 
   /*---------------------------------------------*/
-   .respon1 {
-    font-size: 80px;
+  .respon3 {
+    font-size: 60px;
+  }
+  
+  /*---------------------------------------------*/
+  .respon4 {
+    width: 5px;
+  }
+
+  .respon4 span {
+    display: none;
+  }
+
+  /*---------------------------------------------*/
+  .respon5 {
+    width: 60px;
   }
   
 }
